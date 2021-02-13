@@ -1,0 +1,255 @@
+
+    body{
+        background-image: url("drug.png");
+        background-repeat: no-repeat;
+        background-attachment: fixed;  
+        background-size: cover;   
+    }
+
+    .jumbotron {
+        
+        background: transparent;
+        font: outline;
+        color: rgb(158, 30, 30);
+        text-shadow: 0 0 3px #fafbfd, 0 0 5px #d3cb60; 
+    }
+    
+   /* h4{
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        font-size: 300%;
+    }*/
+
+    /*Search*/
+
+    @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+    /*body{ 
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    background: #131313;
+    color: #fff;
+    font-size: 96px;
+    font-family: 'Fira Mono', monospace;
+    letter-spacing: -7px;
+    }*/
+
+    .wrapper{
+        animation: glitch 1s linear infinite;
+        text-align: center;
+        text-align: center;
+        color: rgb(17, 0, 95);
+        font-weight: bolder;
+        font-size: 300%;
+    }
+
+    @keyframes glitch{
+        2%,64%{
+            transform: translate(2px,0) skew(0deg);
+        }
+        4%,60%{
+            transform: translate(-2px,0) skew(0deg);
+        }
+        62%{
+            transform: translate(0,0) skew(5deg); 
+        }
+    }
+
+    .wrapper:before,
+    .wrapper:after{
+    content: attr(title);
+    position: absolute;
+    left: 0;
+    }
+
+    .wrapper:before{
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    @keyframes glitchTop{
+        2%,64%{
+            transform: translate(2px,-2px);
+        }
+        4%,60%{
+            transform: translate(-2px,2px);
+        }
+        62%{
+            transform: translate(13px,-1px) skew(-13deg); 
+        }
+    }
+
+    .wrapper:after{
+        animation: glitchBotom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    }
+
+    @keyframes glitchBotom{
+        2%,64%{
+            transform: translate(-2px,0);
+        }
+        4%,60%{
+            transform: translate(-2px,0);
+        }
+        62%{
+            transform: translate(-22px,5px) skew(21deg); 
+        }
+    }
+
+
+
+
+    /*button*/
+    * {
+        margin: 0;
+        padding: 0;
+      }
+      
+      
+      .buttons {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+      /*   padding: 2em 0em; */
+      }
+      
+      .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: transparent;
+        padding:  40px 0px;
+        width: 170px;
+        height: 140px;
+
+      }
+      
+      
+      
+      
+      .btn {
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 45px;
+        max-width: 160px;
+        position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        width: 100%;
+      }
+      .btn:hover {
+        text-decoration: none;
+      }
+      
+      /*btn_background*/
+      .effect01 {
+        color: #FFF;
+        border: 4px solid #000;
+        box-shadow:0px 0px 0px 1px #000 inset;
+        background-color: #000;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+      }
+      .effect01:hover {
+        border: 4px solid #666;
+        background-color: #FFF;
+        box-shadow:0px 0px 0px 4px #EEE inset;
+      }
+      
+      /*btn_text*/
+      .effect01 span {
+        transition: all 0.2s ease-out;
+        z-index: 2;
+      }
+      .effect01:hover span{
+        letter-spacing: 0.13em;
+        color: #333;
+      }
+      
+      /*highlight*/
+      .effect01:after {
+        background: #FFF;
+        border: 0px solid #000;
+        content: "";
+        height: 155px;
+        left: -75px;
+        opacity: .8;
+        position: absolute;
+        top: -50px;
+        -webkit-transform: rotate(35deg);
+                transform: rotate(35deg);
+        width: 50px;
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+        z-index: 1;
+      }
+      .effect01:hover:after {
+        background: #FFF;
+        border: 20px solid #000;
+        opacity: 0;
+        left: 120%;
+        -webkit-transform: rotate(40deg);
+                transform: rotate(40deg);
+      }
+
+      .result{
+        text-align: center;
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+        font-weight: 900;
+        
+      }
+
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(0, 13, 70);
+        color: rgb(255, 253, 253);
+        text-align: center;
+        font-size: large;
+        
+     }
+
+     marquee.team{
+        color: rgb(104, 9, 133);
+        margin-top: 32rem;
+        text-align: center;
+        font-size: large;
+        font-weight: bolder;
+        /* text-shadow: 2px 2px 5px #fdfdfd; */
+        white-space: nowrap;
+      
+    }
+    
+    .blink {
+      animation: blinker 1.5s linear infinite;
+      color: #b9f854;
+      font-size: 20px;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+    
