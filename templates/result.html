@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<html lang="en">
+<style>
+
+tr:nth-child(odd)       { background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+tr:hover            { background-color: #80bfff;}
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Adverse drug reaction</title>
+    <style>
+        body{
+            background-image: url(../static/img/drug.png); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;  
+         
+    </style>
+</head>
+
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1>Adverse Drug Reaction</h1>
+    </div>
+    
+    <br>
+    <div class="container-fluid">
+        <div class="wrapper">
+            <div title="Search">Search here</div>
+        </div>
+        <br>
+        <form action="{{ url_for('predict') }}" method="post">
+        
+                 <div class="form-group">
+           <input type="text" class="form-control" id="mol" name="mol" placeholder="Enter Your Drug Smiles Here">
+  	   </div>
+           <div class="buttons">
+                <div class="container">
+                    
+                <button type = "submit" class="btn effect01"><span>Predict</span></button></div>
+            </div>
+            <p class="result"><span>This panel provides information on drug ADRs</span> </p>
+        </div>
+      
+	</form>
+        <div style="display:flex;justify-content:center;align-items:center;">
+         <table border = 1>        
+         {% for key, value in result.items() %}
+            <tr>
+               <th> {{ key }} </th>
+            </tr>
+            </center>
+         {% endfor %}
+      </table>  
+      </div>
+
+    
+    <marquee class="team" width="100%" direction="right">
+        Developed by
+        <span style="color:rgb(255, 72, 0);font-weight:bold">Surya Gokul,</span>
+        <span style="color:rgb(74, 0, 134);font-weight:bold">Ritika gupta,</span>
+        <span style="color:rgb(0, 121, 70);font-weight:bold">Gaby Srivastava,</span>
+        <span style="color:rgb(101, 2, 131);font-weight:bold">Gayathri Devi,</span>
+        <span style="color:rgb(105, 0, 23);font-weight:bold">Pushyami Keerthi,</span>
+        <span style="color:rgb(65, 145, 0);font-weight:bold">Sayyed Nizamuddin Kaleem,</span>
+        <span style="color:rgb(224, 3, 195);font-weight:bold">Sunanda Mahanta,</span>
+        <span style="color:rgb(102, 0, 97);font-weight:bold">Simran Srivastava,</span>
+        <span style="color:rgb(0, 92, 84);font-weight:bold">Mohit Keshwani,</span>
+        <span style="color:rgb(88, 83, 0);font-weight:bold">Surya Bhoite,</span>
+        <span style="color:rgb(118, 0, 122);font-weight:bold">Biswajit Kumar Singh,</span>
+        <span style="color:rgb(19, 5, 68);font-weight:bold">Meet Patel,</span>
+        <span style="color:blue;font-weight:bold">Akshat</span>
+    </marquee>
+    <br>
+    <br>
+
+    <div >
+        <marquee style="color: rgb(0, 7, 100); text-align: center;
+        font-size: large;
+        font-weight: bolder;
+        text-shadow: 2px 2px 5px #fdfdfd;" width="100%" direction="left">
+            Drug addiction doesn't last forever. You either get clean or you die.
+        </marquee>
+    </div>
+    
+        
+   
+
+    <div class="footer">
+        <p>Made with ❤️ by Technocolabs Machine learning team <span class="blink">(Our mentors: Yasin Shah &AMP; Saurabh Shahane)</span>
+        </p>
+    </div>
+        
+    
+    
+    
+ 
+</body>
+</html>
