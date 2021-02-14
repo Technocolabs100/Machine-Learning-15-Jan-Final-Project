@@ -3,17 +3,36 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <html lang="en">
+
+<style>
+
+tr:nth-child(odd)       { background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+tr:hover            { background-color: #ffff99;}
+
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../static/styles.css">
     <title>Adverse drug reaction</title>
+    <style>
+        body{
+            background-image: url(../static/img/drug.png); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;  
+            background-size: cover;  
+         
+    </style>
 </head>
 
+
 <body>
-    
+
     <div class="jumbotron text-center">
-        <h1>Adverse drug reaction</h1>
+        <h1>Adverse Drug Reaction</h1>
     </div>
     
     <br>
@@ -22,24 +41,19 @@
             <div title="Search">Search here</div>
         </div>
         <br>
-        <form action="" method="post">
-      
-            <div style="text-align: center;">
-                <input type="text" size="50">
-            </div>
-           
-            <div class="buttons">
-                <div class="container">
-                    <a class="btn effect01"><span>Submit</span></a>
-                </div>
-            </div>
-            <p class="result"><span>The output is:</span> </p>
-        </form>
+        <form action="{{ url_for('predict') }}" method="post">
         
+                 <div class="form-group">
+           <input type="text" class="form-control" id="mol" name="mol" placeholder="Enter Your Drug Smiles Here">
+  	   </div>
+           <div class="buttons">
+                <div class="container">
+                    
+                <button type = "submit" class="btn effect01"><span>Predict</span></button></div>
+            </div>
+        </div>
       
-        <!-- <h4 style="color:rgb(14, 3, 3); font-size: 25px; font-style: Monaco;"> {{ results }} </h4> -->
-          
-    </div>
+	</form>
 
     
     <marquee class="team" width="100%" direction="right">
@@ -74,7 +88,7 @@
    
 
     <div class="footer">
-        <p>Developed by Technocolabs machine learniing team <span class="blink">(Our mentors: Yashin Shah &AMP; Saurabh Shahane)</span>
+        <p>Made with ❤️ by Technocolabs Machine learning team <span class="blink">(Our mentors: Yasin Shah &AMP; Saurabh Shahane)</span>
         </p>
     </div>
         

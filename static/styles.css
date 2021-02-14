@@ -1,13 +1,5 @@
 
-    body{
-        background-image: url("drug.png");
-        background-repeat: no-repeat;
-        background-attachment: fixed;  
-        background-size: cover;   
-    }
-
     .jumbotron {
-        
         background: transparent;
         font: outline;
         color: rgb(158, 30, 30);
@@ -132,12 +124,11 @@
         justify-content: center;
         text-align: center;
         background-color: transparent;
-        padding:  40px 0px;
+        padding:  10px 0px;
         width: 170px;
         height: 140px;
 
       }
-      
       
       
       
@@ -156,6 +147,9 @@
       .btn:hover {
         text-decoration: none;
       }
+      .btn:active{
+        box-shadow: 0 0;
+       }
       
       /*btn_background*/
       .effect01 {
@@ -252,4 +246,3 @@
         opacity: 0;
       }
     }
-    
