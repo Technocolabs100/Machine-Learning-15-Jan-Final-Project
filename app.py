@@ -78,13 +78,13 @@ def get_descriptors(mol, write=False):
 
 @app.route('/')
 def home():
-    return render_template('Index.html')
+    return render_template('index.html')
 
 @app.route('/predict' , methods = ['POST'])
 
 
 def predict():
-    mol = str(flask.request.form['url'])
+    mol = str(flask.request.form['mol'])
     mol,desc = get_data(mol)
     try:
         fp = rdMolDescriptors.GetMorganFingerprintAsBitVect(mol, 2, nBits=1125)
@@ -123,7 +123,7 @@ def predict():
         result[i] = (model.predict([test])[0])
     
     
-    return render_template('Index.html', results = 'Drug ADRs \n {}'.format([result.index[i] for i,v in enumerate(result) if v==1]))
+    return render_template('result.html', result = result[result==1])
 
 if __name__ == "__main__":
     app.run(debug = True)
